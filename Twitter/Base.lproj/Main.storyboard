@@ -55,7 +55,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="Q8T-Nr-6Lj">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tweetCell" rowHeight="106" id="Q8T-Nr-6Lj" customClass="TweetCellTableViewCell" customModule="Twitter" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="106"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Q8T-Nr-6Lj" id="72V-wl-3WW">
@@ -65,43 +65,48 @@
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qbI-x1-lkJ">
                                             <rect key="frame" x="20" y="11" width="65" height="65"/>
                                             <constraints>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="65" id="AHe-Kk-2xc"/>
                                                 <constraint firstAttribute="height" constant="65" id="bxq-d1-MeQ"/>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="65" id="jO9-HB-9LM"/>
                                                 <constraint firstAttribute="width" constant="65" id="kdB-b4-fvP"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vbu-0G-cbf">
-                                            <rect key="frame" x="90" y="16" width="51" height="22"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vbu-0G-cbf">
+                                            <rect key="frame" x="93" y="11" width="42.666666666666657" height="25"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="25" id="TzM-tq-lNr"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Tweet Body" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xkd-hm-svB">
-                                            <rect key="frame" x="93" y="42" width="301" height="64"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tweet Content" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vT0-sL-4f5">
+                                            <rect key="frame" x="93" y="36" width="321" height="70"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="qbI-x1-lkJ" firstAttribute="top" secondItem="72V-wl-3WW" secondAttribute="top" id="3kB-Bh-xPi"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="Xkd-hm-svB" secondAttribute="bottom" id="4m0-6b-avk"/>
-                                        <constraint firstItem="qbI-x1-lkJ" firstAttribute="leading" secondItem="72V-wl-3WW" secondAttribute="leading" id="6yu-56-Fx0"/>
-                                        <constraint firstItem="Xkd-hm-svB" firstAttribute="top" secondItem="72V-wl-3WW" secondAttribute="topMargin" constant="4" id="7eP-al-SUl"/>
-                                        <constraint firstItem="Xkd-hm-svB" firstAttribute="top" secondItem="72V-wl-3WW" secondAttribute="topMargin" constant="4" id="8Ga-Bv-acR"/>
-                                        <constraint firstItem="Xkd-hm-svB" firstAttribute="leading" secondItem="qbI-x1-lkJ" secondAttribute="trailing" constant="8" id="9vu-RW-fLE"/>
+                                        <constraint firstItem="vT0-sL-4f5" firstAttribute="leading" secondItem="qbI-x1-lkJ" secondAttribute="trailing" constant="8" id="EiI-l3-QOa"/>
+                                        <constraint firstItem="qbI-x1-lkJ" firstAttribute="top" secondItem="72V-wl-3WW" secondAttribute="topMargin" id="Fj5-9a-FkI"/>
+                                        <constraint firstItem="qbI-x1-lkJ" firstAttribute="top" secondItem="72V-wl-3WW" secondAttribute="topMargin" id="Gxn-iM-Wd0"/>
                                         <constraint firstItem="vbu-0G-cbf" firstAttribute="leading" secondItem="qbI-x1-lkJ" secondAttribute="trailing" constant="8" id="LTu-It-Jqs"/>
-                                        <constraint firstItem="Xkd-hm-svB" firstAttribute="leading" secondItem="qbI-x1-lkJ" secondAttribute="trailing" constant="8" id="NZE-20-XLz"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="Xkd-hm-svB" secondAttribute="trailing" id="OXA-nK-9RO"/>
-                                        <constraint firstItem="Xkd-hm-svB" firstAttribute="top" secondItem="vbu-0G-cbf" secondAttribute="bottom" constant="4" id="Oyq-M6-cfh"/>
-                                        <constraint firstItem="qbI-x1-lkJ" firstAttribute="leading" secondItem="72V-wl-3WW" secondAttribute="leadingMargin" id="SDO-N7-rBf"/>
-                                        <constraint firstItem="qbI-x1-lkJ" firstAttribute="top" secondItem="72V-wl-3WW" secondAttribute="topMargin" id="UKr-TU-sAk"/>
-                                        <constraint firstItem="Xkd-hm-svB" firstAttribute="leading" secondItem="qbI-x1-lkJ" secondAttribute="trailing" constant="8" id="ZZy-gT-NOH"/>
-                                        <constraint firstItem="qbI-x1-lkJ" firstAttribute="top" secondItem="72V-wl-3WW" secondAttribute="top" constant="5" id="aB9-WF-hxY"/>
-                                        <constraint firstItem="qbI-x1-lkJ" firstAttribute="leading" secondItem="72V-wl-3WW" secondAttribute="leading" constant="5" id="iA0-W2-oNc"/>
-                                        <constraint firstItem="vbu-0G-cbf" firstAttribute="top" secondItem="72V-wl-3WW" secondAttribute="topMargin" constant="5" id="n4a-Ek-n6q"/>
-                                        <constraint firstItem="vbu-0G-cbf" firstAttribute="leading" secondItem="qbI-x1-lkJ" secondAttribute="trailing" constant="5" id="y6Z-B9-1J1"/>
+                                        <constraint firstItem="vbu-0G-cbf" firstAttribute="top" secondItem="72V-wl-3WW" secondAttribute="topMargin" id="YCk-bp-fWG"/>
+                                        <constraint firstItem="vbu-0G-cbf" firstAttribute="top" secondItem="72V-wl-3WW" secondAttribute="topMargin" id="e1s-jR-3ja"/>
+                                        <constraint firstItem="qbI-x1-lkJ" firstAttribute="leading" secondItem="72V-wl-3WW" secondAttribute="leadingMargin" id="eLN-we-fZA"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="vbu-0G-cbf" secondAttribute="trailing" constant="20" symbolic="YES" id="kqM-Jw-UDO"/>
+                                        <constraint firstItem="qbI-x1-lkJ" firstAttribute="leading" secondItem="72V-wl-3WW" secondAttribute="leadingMargin" id="me8-Ev-O6z"/>
+                                        <constraint firstItem="vT0-sL-4f5" firstAttribute="top" secondItem="vbu-0G-cbf" secondAttribute="bottom" id="uS6-Fe-PSB"/>
+                                        <constraint firstAttribute="trailing" secondItem="vT0-sL-4f5" secondAttribute="trailing" id="xGN-Hd-VQG"/>
+                                        <constraint firstAttribute="bottom" secondItem="vT0-sL-4f5" secondAttribute="bottom" id="z8L-9D-R0b"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="profileImageView" destination="qbI-x1-lkJ" id="p8K-DU-wTO"/>
+                                    <outlet property="tweetContentLabel" destination="vT0-sL-4f5" id="fd1-NR-LbZ"/>
+                                    <outlet property="userNameLabel" destination="vbu-0G-cbf" id="9BW-a1-296"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
