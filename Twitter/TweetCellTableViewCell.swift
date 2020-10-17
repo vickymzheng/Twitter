@@ -51,13 +51,13 @@ class TweetCellTableViewCell: UITableViewCell {
     @IBAction func retweet(_ sender: Any) {
         let newRetweetStatus = !retweeted
         if (newRetweetStatus) {
-            TwitterAPICaller.client?.retweet(tweetID: tweetID, success: {self.setFavorite(isFavorited: newRetweetStatus)}, failure: { (error) in
-                print("Error in favoriting: \(error)")
+            TwitterAPICaller.client?.retweet(tweetID: tweetID, success: {self.setRetweeted(isRetweeted: newRetweetStatus)}, failure: { (error) in
+                print("Error in retweeting: \(error)")
             })
         }
         else {
-            TwitterAPICaller.client?.unretweet(tweetID: tweetID, success: {self.setFavorite(isFavorited: newRetweetStatus)}, failure: { (error) in
-                print("Error in unfavoriting: \(error)")
+            TwitterAPICaller.client?.unretweet(tweetID: tweetID, success: {self.setRetweeted(isRetweeted: newRetweetStatus)}, failure: { (error) in
+                print("Error in unretweeting: \(error)")
             })
         }    }
     

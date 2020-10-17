@@ -101,7 +101,7 @@ class TwitterAPICaller: BDBOAuth1SessionManager {
     }
     
     func unretweet(tweetID: Int, success: @escaping () -> (), failure: @escaping (Error) -> ()) {
-        let url = "https://api.twitter.com/1.1/statuses/destroy/\(tweetID).json"
+        let url = "https://api.twitter.com/1.1/statuses/unretweet/\(tweetID).json"
         TwitterAPICaller.client?.post(url, parameters: ["id":tweetID], progress: nil, success: { (task: URLSessionDataTask, response: Any?) in
             success()
         }, failure: { (task: URLSessionDataTask?, error: Error) in
